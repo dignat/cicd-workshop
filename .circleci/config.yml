@@ -9,12 +9,13 @@ parameters:
   webhook:
     type: string
     default: '${DISCORD_WEBHOOK_URL}'
-  success-message:
-    type: string
-    default: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
+
+  success-message:
+    type: string
+    default: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
   say-hello:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
