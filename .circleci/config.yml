@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'message',
+          name: "message",
           command: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
   say-hello:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
