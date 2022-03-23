@@ -8,21 +8,13 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  success-message:
-  docker:
-      - image: cimg/base:stable
-    parameters:
-      webhook:
-        type: string
-        default: '${DISCORD_WEBHOOK_URL}'
-    steps:
-      - checkout
-      - run:
-         name: Success Message,
-         command: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
   say-hello:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+     parameters:
+      webhook:
+        type: string
+        default: '${DISCORD_WEBHOOK_URL}'
     docker:
       - image: cimg/base:stable
     # Add steps to the job
@@ -30,8 +22,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Success Message,
+          command: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
