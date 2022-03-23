@@ -9,9 +9,6 @@ parameters:
   webhook:
     type: string
     default: '${DISCORD_WEBHOOK_URL}'
-  success-message:
-    type: string
-    default: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -34,3 +31,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - success-message
+        type: string
+        default: ':tada: A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com'
