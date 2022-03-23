@@ -23,7 +23,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Say Hello,
+          name: "Say Hello"
           command: "A $CIRCLE_JOB job has succeeded! email:dignat@yahoo.com"
 
 # Invoke jobs via workflows
