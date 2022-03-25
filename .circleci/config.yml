@@ -22,7 +22,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - discor/status
+      - discor/status:
           success_message: ':tada: A $CIRCLE_JOB job has succeeded! - dignat@yahoo.com'
       - run:
           name: "Say Hello"
